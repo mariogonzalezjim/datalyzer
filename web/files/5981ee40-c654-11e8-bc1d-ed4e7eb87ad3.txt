@@ -1,0 +1,14 @@
+<model appid="5981ee40-c654-11e8-bc1d-ed4e7eb87ad3">
+<Data>
+<json>{"_id":"5bb36f57fb6fc01962212498","imageUrl":"/resources/editor/assets/images/logos/testing.png","type":"Satori","protocol":"http://","url":"bfd2aadFeee51BA6FB03D7194944BeF4","web":"https://www.satori.com/opendata/channels/bitcoin-transactions","description":"Data for testing.","name":"Testing","auth":[{"value":"bfd2aadFeee51BA6FB03D7194944BeF4","name":"appkey"},{"value":"datalyzer","name":"channel"}],"values":[{"name":"Timestamp","ruta":"data.time","type":"string","check":"true"},{"name":"User Name","ruta":"data.user","type":"string","check":"true"}],"params":[],"model":"shape_DataSource","connections":[{"id":2}],"connectionsOut":[],"id":1,"nameId":"1"}</json>
+<type>Satori</type>
+</Data>
+<Data>
+<json>{"name":"Pipeline","imageUrl":"/resources/editor/assets/images/logos/monitor2.png","type":"PipelineSimple","model":"shape_Pipeline","connections":[{"id":1}],"connectionsOut":[],"id":2,"nameId":"2"}</json>
+<type>PipelineSimple</type>
+</Data>
+<Data>
+<json>{"name":"Table","imageUrl":"/resources/editor/assets/images/logos/online_results_table.png","type":"Results","model":"shape_Table","connections":[{"id":2}],"connectionsOut":[],"url":"charts/table.html","id":3,"nameId":"3"}</json>
+<type>Results</type>
+</Data>
+</model>

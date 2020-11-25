@@ -1,0 +1,183 @@
+
+<body class="">
+
+  <!-- Main Container Fluid -->
+  <div class="container-fluid fluid menu-left">
+
+    <!-- Sidebar menu & content wrapper -->
+    <div id="wrapper">
+
+      <!-- Sidebar Menu -->
+      <div id="menu" class="hidden-print">		
+
+        <!-- Scrollable menu wrapper with Maximum height -->
+        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 1025px;"><div class="slim-scroll" data-scroll-height="800px" style="overflow: hidden; width: auto; height: 1025px;">
+
+
+          <!-- Regular Size Menu -->
+          <ul style="padding-left: 0px;">
+
+            <!-- Full Sidebar Style -->
+            <li id="menu-dashboard"><a href="./dashboard" class="glyphicons dashboard"><i></i> Dashboard</a></li>
+            <li id="menu-shared" class="dropdown dd-1">
+              <a href="" data-toggle="dropdown" class="glyphicons share_alt"><i></i>Shared <span class="icon-chevron-right"></span></a>
+              <ul class="dropdown-menu pull-left">											
+                <li><a class="glyphicons file" href="./private/shared_projects/"><i></i>PROJECTS</a></li>
+                <li><a class="glyphicons file" href="./private/shared_artifacts/"><i></i>ARTIFACTS</a></li>						
+              </ul>
+            </li>
+            <li id="menu-artifacts" class="dropdown dd-1">
+              <a href="" data-toggle="dropdown" class="glyphicons list"><i></i> MY ARTIFACS <span class="icon-chevron-right"></span></a>
+              <ul class="dropdown-menu pull-left">											
+                <li><a href="./private/EcoreMetamodel/artifacts">METAMODELS</a></li>
+                <li><a href="./private/ATLTransformation/artifacts">ATL TRANSFORMATIONS</a></li>
+                <li><a href="./private/Model/artifacts">MODELS</a></li>
+              </ul>
+            </li>
+            <li><a class="glyphicons dashboard" href="./private/ATLTransformation/transformation_list/"><i></i>WORKSPACES</a></li> 
+            <li id="menu-workspaces"class="dropdown dd-1">
+              <a href="" data-toggle="dropdown" class="glyphicons inbox"><i></i>WORKSPACES <span class="icon-chevron-right"></span></a>
+              <ul class="dropdown-menu pull-left">											
+                <li><a href="./private/workspace/list"  class="glyphicons list"><i></i>LIST</a></li>
+                <li><a href="./private/workspace/create" class="glyphicons circle_plus"><i></i>CREATE NEW</a></li>
+              </ul>
+            </li>
+            <!-- // Full Sidebar Style END -->
+
+            <!-- // Not blank page END -->
+
+          </ul>
+          <div class="clearfix"></div>
+          <!-- // Regular Size Menu END -->
+
+
+
+          </div><div class="slimScrollBar ui-draggable" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 1025px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+        <!-- // Scrollable Menu wrapper with Maximum Height END -->
+
+      </div>
+      <!-- // Sidebar Menu END -->
+
+      <!-- Content -->
+      <div id="content">
+
+        <!-- Top navbar -->
+        <div class="navbar main">
+			
+			<!-- Menu Toggle Button -->
+			<button type="button" class="btn btn-navbar pull-left">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+			</button>
+			<!-- // Menu Toggle Button END -->
+			
+			
+						<!-- Not Blank page -->
+			
+						<!-- Full Top Style -->
+			<ul class="topnav pull-left">
+				
+				<li class="dropdown dd-1">
+					<a href="#upload-artifact" data-toggle="modal" class="glyphicons cloud-upload"><i></i> ARTIFACT UPLOAD <!--  <span class="caret"></span>--></a>
+				</li>
+				
+					 <li><a href="$./public/search" class="glyphicons search"><i></i> Search</a></li>	 
+					
+				<li class="glyphs hidden-tablet hidden-phone">
+					<ul>
+						<li><a href="./public/dashboard" class="glyphicons folder_open" data-toggle="tooltip" data-title="Browse the repository" data-placement="bottom" data-original-title="" title=""><i></i></a></li>
+						<li><a href="./public/search" class="glyphicons search" data-toggle="tooltip" data-title="Search Artifacts" data-placement="bottom" data-original-title="" title=""><i></i></a></li>
+						<li><a href="./private/dashboard" class="glyphicons dashboard" data-toggle="tooltip" data-title="Dashboard" data-placement="bottom" data-original-title="" title=""><i></i></a></li>
+					</ul>
+				</li>
+				<li class="search open">
+					<form action="./public/search" method="get" class="dropdown dd-1">
+						<input type="text" value="" placeholder="Search Artifacts.." name="search_string" />
+						<button type="button" class="glyphicons search"><i></i></button>
+					</form>
+				</li>
+			</ul>
+			<!-- // Full Top Style END -->
+						
+						
+			<!-- // Not Blank Page END -->
+						
+						
+			<!-- Top Menu Right -->
+			<ul class="topnav pull-right">
+			
+			<!-- Themer -->
+				<li class="">
+					<a href="./"><span class="hidden-tablet hidden-phone">Home</span></a>
+				</li>
+				<li class="account dropdown dd-1">
+					
+					<a data-toggle="dropdown" href="#" class="logout">
+					<span class="hidden-tablet hidden-phone"> {{user.local.email}} </span>
+					</a>
+					<ul class="dropdown-menu pull-right">				
+								
+						<li class="profile">
+							<span>
+								
+								<img id="imagePreview" src="./resources/theme/images/user-icon.png"alt="Profile Photo"/>
+								<div class="details">
+									<a href="#">{{user.local.email}}</a>
+									<br>
+									<a href="#">{{user.local.email}}</a>
+									<!--<security:authentication property="principal.user.id" var="userId"/>-->
+                                  <input type="hidden" value="{{user.local.id}}" id="loggedUserId" > 
+                                 </div>
+								</span>
+								<span class="clearfix"></span>
+							
+						</li>
+						<li><a href="./private/dashboard" class="menu-right-dropdown pull-right">Dashboard</a></li>		
+						<li><a href="./profile" class="menu-right-dropdown pull-right">Account</a></li>		
+						<!-- <li><a href="./dashboard" class="menu-right-dropdown pull-right">Home</a></li> -->
+						<hr>
+						<li>
+								<a id="logout" class="btn btn-default pull-right" href="./j_spring_security_logout">Logout</a>
+						</li>
+					</ul>
+				</li>
+				<!-- // Profile / Logout menu END -->
+				
+			</ul>
+			<!-- // Top Menu Right END -->
+		<div class="clearfix"></div>
+			
+		</div>
+
+        <!-- Body START -->
+        <!-- // Main Container Fluid END -->
+        <h1>{{title}}</h1>
+        <p>Welcome {{user.local.email}}</p>
+
+        <!-- Body END -->
+
+
+
+      </div>
+      <!-- // Content END -->
+
+    </div>
+    <div class="clearfix"></div>
+    <!-- // Sidebar menu & content wrapper END -->
+
+
+    <!-- // Footer START -->
+    <div id="footer" class="hidden-print">
+      <!--  Copyright Line -->
+      <div class="copy">
+        Datalyzer @ 2017
+      </div>
+    </div>
+    <!-- // Footer END -->
+
+  </div>
+
+
+
+
+</body>
+

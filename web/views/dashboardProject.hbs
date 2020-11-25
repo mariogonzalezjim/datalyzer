@@ -1,0 +1,205 @@
+<!-- Body START -->
+<script>
+
+    var arraySocketsId=[]
+
+    {{#each widgets}}
+          arraySocketsId.push("{{this.socketId}}")
+    {{/each}}
+
+                
+                        
+</script>
+
+
+<div class="">
+    <div class="wrapper">
+        <div data-background-color="black" data-active-color="success" class="sidebar">
+            <div id="style-3" class="sidebar-wrapper">
+                <div class="logo">
+                    <a  class="simple-text">                  
+                        {{project.name}}
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="router-link-exact-active active">
+                        <a href="#">
+                            <i class="ti-panel"></i> 
+                            <p>Dashboard
+                            </p>
+                        </a>
+                    </li>
+                    <!-- <li class="">
+<a href="#/admin/stats">
+<i class="ti-user"></i> 
+<p>User Profile
+</p>
+</a>
+</li>
+-->
+                </ul>
+                <div class="moving-arrow" style="transform: translate3d(0px, 0px, 0px);">
+                </div>
+            </div>
+        </div>
+        <div class="notifications">
+            <span></span>
+        </div>
+
+        <div class="main-panel">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle">
+                            <span class="sr-only">Toggle navigation</span> 
+                            <span class="icon-bar bar1"></span> 
+                            <span class="icon-bar bar2"></span> 
+                            <span class="icon-bar bar3"></span>
+                        </button> 
+                        <a class="navbar-brand">Overview</a>
+                    </div>
+                    <div class="navbar-right-menu">
+                        <ul class="nav navbar-nav navbar-right">
+
+                            <li>
+                                <a href="https://cristijora.github.io/vue-paper-dashboard/#" class="btn-rotate">
+                                    <i class="ti-settings"></i> 
+                                    <p>Settings</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="col-xs-5">
+                                                <div class="icon-big text-center icon-warning">
+                                                    <div class="circle-icon" id="serverStatus"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <div class="numbers">
+                                                    <p>System</p>
+                                                    Status
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <hr>
+                                            <div class="stats">
+                                                <i class="ti-reload"></i>  Real-time
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="col-xs-5">
+                                                <div class="icon-container-new">
+                                                    <div class="icon-big text-center icon-success" id="divPauseApp">
+                                                        <a href="#" onClick="pauseAPP(this);" class="pauseAPP"><i class="ti-control-pause" style="color: #41B883;"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <div class="numbers" id="infoPauseAPP">
+                                                    <p>Press button to</p>
+                                                    Pause
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <hr>
+                                            <div class="stats"><i class="ti-reload"></i> App current status
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="col-xs-5">
+                                                <div class="icon-container-new">
+                                                    <div class="icon-big text-center icon-success" id="divPauseApp">
+                                                        <a href="#" onClick="stopAPP(this);" class="pauseAPP"><i class="ti-power-off" style="color: #b70000;"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <div class="numbers">
+                                                    <p>Press button to</p>
+                                                    Stop
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <hr>
+                                            <div class="stats"><i class="ti-stats-up"></i> System
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="col-xs-5">
+                                                <div class="icon-big text-center icon-info"><i class="ti-pulse" style="color: rgb(65, 184, 106);"></i></div>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <div class="numbers">
+                                                    <p>Data received</p>
+                                                    <div id="bandwidth">0 B/s</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <hr>
+                                            <div class="stats"><i class="ti-reload"></i> Real-time
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="dashboardElements" >
+
+
+                            {{#each widgets}}
+                            <div class="col-xs-12">
+                                <div class="card"> 
+                                    <div class="">
+                                        <iframe class="iframe-dashboard" src="/dashboard/{{this.url}}?socketId={{this.socketId}}&name={{this.name}}&projectId={{this.projectId}}&configuration={{this.configuration}}" width="100%" scrolling="no">
+                                        </iframe>
+
+                                        
+                                    </div>
+                                </div> 
+                            </div>
+                            {{/each}}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+
+            </footer>
+        </div>
+    </div>
+
+</div>
+

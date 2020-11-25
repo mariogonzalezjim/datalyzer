@@ -1,0 +1,47 @@
+<model appid="">
+<Data>
+<json>
+{ "description" : "The Twitter Streaming API allows to collect a public stream of tweets in real-time that you can configure with differents parameters. By technical limitations, if you have several filters, they will work as an OR.",
+  "name": "Twitter", 
+  "url" : "api.openweathermap.org/data/2.5/weather?", 
+  "protocol" : "http://", 
+  "type" : "Twitter", 
+  "imageUrl" : "/resources/editor/assets/images/logos/twitter-icon.png",
+  "acessKind" : "PushType",
+  "auth" : [  ], 
+  "values" : [ 
+                {  "name": "invalid" ,
+                   "ruta": "invalid" ,
+                   "type": "invalid" ,
+                   "check": "true"   
+                }  ,  
+                {  "name": "invalid" ,
+                   "ruta": "invalid" ,
+                   "type": "invalid" ,
+                   "check": "true"   
+                }  ,  
+                {  "name": "invalid" ,
+                   "ruta": "invalid" ,
+                   "type": "invalid" ,
+                   "check": "true"   
+                }  ,  
+                {  "name": "invalid" ,
+                   "ruta": "invalid" ,
+                   "type": "invalid" ,
+                   "check": "true"   
+                }  
+             ],
+  "params" : [ 
+             ],
+   "model": "shape_DataSource",
+   "connections" : [ 
+                   ],
+   "connectionsOut" : [ ],
+   "id" : "5aa955c8f36d2876ecd35500", 
+   "nameId" : "s0", 
+}
+</json>
+<type>Twitter</type>
+</Data></model>
+
+

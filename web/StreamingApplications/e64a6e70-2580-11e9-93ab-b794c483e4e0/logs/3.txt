@@ -1,0 +1,13 @@
+{"1: Total Vehiculos Tunel":1828,"timestampFile":"04-02-2019 14:58:52.776","1: Velocidad Media Tunel":63.27}
+{"1: Total Vehiculos Tunel":1828,"timestampFile":"04-02-2019 14:58:58.794","1: Velocidad Media Tunel":63.27}
+{"1: Total Vehiculos Tunel":1828,"timestampFile":"04-02-2019 14:59:04.818","1: Velocidad Media Tunel":63.27}
+{"1: Total Vehiculos Tunel":1828,"timestampFile":"04-02-2019 14:59:10.850","1: Velocidad Media Tunel":63.27}
+{"1: Total Vehiculos Tunel":1828,"timestampFile":"04-02-2019 14:59:16.869","1: Velocidad Media Tunel":63.27}
+{"1: Total Vehiculos Tunel":1828,"timestampFile":"04-02-2019 14:59:22.893","1: Velocidad Media Tunel":63.27}
+{"1: Total Vehiculos Tunel":1828,"timestampFile":"04-02-2019 14:59:28.924","1: Velocidad Media Tunel":63.27}
+{"1: Total Vehiculos Tunel":1828,"timestampFile":"04-02-2019 14:59:34.954","1: Velocidad Media Tunel":63.27}
+{"1: Total Vehiculos Tunel":1828,"timestampFile":"04-02-2019 14:59:40.984","1: Velocidad Media Tunel":63.27}
+{"1: Total Vehiculos Tunel":1828,"timestampFile":"04-02-2019 14:59:47.002","1: Velocidad Media Tunel":63.27}
+{"1: Total Vehiculos Tunel":1552,"timestampFile":"04-02-2019 14:59:53.033","1: Velocidad Media Tunel":63.61}
+{"1: Total Vehiculos Tunel":1552,"timestampFile":"04-02-2019 14:59:59.064","1: Velocidad Media Tunel":63.61}
+{"1: Total Vehiculos Tunel":1552,"timestampFile":"04-02-2019 15:00:05.090","1: Velocidad Media Tunel":63.61}

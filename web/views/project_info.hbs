@@ -1,0 +1,113 @@
+<!-- Body START -->
+
+<ul class="breadcrumb">
+    <li>You are here</li>
+    <li><a href="#" class="glyphicons dashboard"><i></i> Public area</a></li>
+    <li class="divider"></li>
+    <li>Browse</li>
+    <li class="divider"></li>
+    <li>Project Details</li>
+</ul>
+
+<div class="innerLR">
+    <div class="row-fluid">
+        <div class="span9">
+            <div class="box-generic">
+                <h3 class="header-h main-title" id="artifactName" data-id="593fe7cfc2dc5dac4927d389">{{project.name}} </h3>
+                <!-- <h5 class="muted">Metamodel Details</h5>-->
+                <h5 class="muted">Model Details</h5>
+                <hr>
+                <div class="separator bottom"></div>
+                <span class="text-primary" style="font-size: 16px">Creation Date</span>
+                <h5>13/06/17 15:25</h5>
+                <span class="text-primary" style="font-size: 16px">Last Modified</span>
+                <h5>13/06/17 15:25</h5>
+
+                <h5 class="input-name">Description</h5>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{project.description}}</p>
+                <h5 class="input-name"><b>Actions</b></h5>   
+
+            </div>
+        </div>
+        <div class="span3 text-right">
+            <div class="box-generic">
+                <h5 class="input-name">Visibility</h5>
+                <span class="btn btn-danger">	
+                    <span class="icon-cloud"><i></i></span> Private</span>						  												    
+
+
+
+                <div class="separator bottom"></div>
+                <h5 class="input-name">Admin <span class="icon-user text-primary"><i></i></span></h5>
+                <!-- // Profile Photo END -->
+                <ul class="icons-ul">
+                    <li class="text-black" style="font-size: 14px">{{user.local.name}} {{user.local.lastname}}</li>
+                    <li><a href="#">{{user.local.email}}</a> <span class="icon-envelope text-primary"><i></i></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+
+    <div class="box-generic" style="margin-left:40px;margin-top:-20px;">
+        <div class="span1">
+            <a href="/private/edit_project?id={{project.id}}" class="widget-stats widget-stats-2" data-toggle="modal">
+                <span class="count  icon-desktop text-info" style="color:green;"><i></i></span>
+                <span class="txt" style="color:green;">Open Editor</span>
+            </a>
+        </div>
+        <div class="span1" >
+            <a href="#myModal" class="widget-stats widget-stats-2" data-toggle="modal">
+                <span class="count  icon-trash text-info" style="color:#990000;"><i></i></span>
+                <span class="txt" style="color:#d40606;">Delete Project</span>
+            </a>
+        </div>
+        <div class="span1   {{#unless project.compiled}} disabled {{/unless}}" >
+            <a href="/private/dashboard?id={{project.id}}" class="widget-stats widget-stats-2" data-toggle="modal" target="_blank" >
+                {{#if project.compiled }}
+                    <span class="count  icon-play text-info" style="color:#406084;">
+                         <i></i>
+                    </span>
+                    <span class="txt" style="color:#406084;">Run Project</span>
+                {{/if}}
+                {{#unless project.compiled}}
+                      <span class="count  icon-play text-info" style="color:#555b60;">
+                           <i></i>
+                      </span>
+                      <span class="txt" style="color:#54585c;">Run Project</span>
+                {{/unless}}
+                
+            </a>
+        </div>
+
+
+        <div class="separator bottom"></div>
+    </div>
+</div>
+<!-- Body END -->
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><b>Delete project</b></h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure? You can't undo this action! </p>
+            </div>
+            <div class="modal-footer" method="post">
+                <form action="/private/delete_project?id={{project.id}}" method="post">
+                    <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger btn-lg">Delete</button>    
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

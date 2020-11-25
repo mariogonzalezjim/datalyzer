@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_kafkaapiclient" default="compile.module.kafkaapiclient">
+  <dirname property="module.kafkaapiclient.basedir" file="${ant.file.module_kafkaapiclient}"/>
+  
+  <property name="module.jdk.home.kafkaapiclient" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.kafkaapiclient" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.kafkaapiclient" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.kafkaapiclient" value="-encoding UTF-8 -source 1.5 -target 1.5 ${compiler.args}"/>
+  
+  <property name="kafkaapiclient.output.dir" value="${module.kafkaapiclient.basedir}/target/classes"/>
+  <property name="kafkaapiclient.testoutput.dir" value="${module.kafkaapiclient.basedir}/target/test-classes"/>
+  
+  <path id="kafkaapiclient.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="kafkaapiclient.module.production.classpath">
+    <path refid="${module.jdk.classpath.kafkaapiclient}"/>
+    <pathelement location="${basedir}/dependencies/satori-sdk-java-core-1.0.2.jar"/>
+    <pathelement location="${basedir}/dependencies/ejml-0.23.jar"/>
+    <pathelement location="${basedir}/dependencies/kafka_2.10-0.10.2.1.jar"/>
+    <pathelement location="${basedir}/dependencies/kafka-clients-0.10.2.0.jar"/>
+    <pathelement location="${basedir}/dependencies/zkclient-0.10.jar"/>
+    <pathelement location="${basedir}/dependencies/zookeeper-3.4.10.jar"/>
+    <pathelement location="${basedir}/dependencies/scala-library-2.10.4.jar"/>
+    <path refid="library.maven:_org.apache.kafka:kafka-clients:0.9.0.0.classpath"/>
+    <path refid="library.maven:_org.xerial.snappy:snappy-java:1.1.1.7.classpath"/>
+    <path refid="library.maven:_net.jpountz.lz4:lz4:1.2.0.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.12.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-log4j12:1.7.12.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.17.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:23.0.classpath"/>
+    <path refid="library.maven:_com.google.code.findbugs:jsr305:1.3.9.classpath"/>
+    <path refid="library.maven:_com.google.errorprone:error_prone_annotations:2.0.18.classpath"/>
+    <path refid="library.maven:_com.google.j2objc:j2objc-annotations:1.1.classpath"/>
+    <path refid="library.maven:_org.codehaus.mojo:animal-sniffer-annotations:1.14.classpath"/>
+    <path refid="library.maven:_com.satori:satori-rtm-sdk:1.1.0.classpath"/>
+    <path refid="library.maven:_com.satori:satori-rtm-sdk-core:1.1.0.classpath"/>
+    <path refid="library.maven:_com.neovisionaries:nv-websocket-client:1.31.classpath"/>
+    <path refid="library.maven:_com.satori:satori-rtm-sdk-gson:1.1.0.classpath"/>
+    <path refid="library.maven:_com.google.code.gson:gson:2.8.0.classpath"/>
+    <path refid="library.maven:_com.googlecode.json-simple:json-simple:1.1.1.classpath"/>
+    <path refid="library.maven:_junit:junit:4.10.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.1.classpath"/>
+    <path refid="library.maven:_com.twitter:hbc-twitter4j:2.2.0.classpath"/>
+    <path refid="library.maven:_com.twitter:hbc-core:2.2.0.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_com.twitter:joauth:6.0.2.classpath"/>
+    <path refid="library.maven:_org.twitter4j:twitter4j-stream:4.0.1.classpath"/>
+    <path refid="library.maven:_org.twitter4j:twitter4j-core:4.0.5.classpath"/>
+    <path refid="library.maven:_com.rometools:rome:1.7.3.classpath"/>
+    <path refid="library.maven:_com.rometools:rome-utils:1.7.3.classpath"/>
+    <path refid="library.maven:_org.jdom:jdom2:2.0.6.classpath"/>
+  </path>
+  
+  <path id="kafkaapiclient.runtime.production.module.classpath">
+    <pathelement location="${kafkaapiclient.output.dir}"/>
+    <pathelement location="${basedir}/dependencies/satori-sdk-java-core-1.0.2.jar"/>
+    <pathelement location="${basedir}/dependencies/ejml-0.23.jar"/>
+    <pathelement location="${basedir}/dependencies/kafka_2.10-0.10.2.1.jar"/>
+    <pathelement location="${basedir}/dependencies/kafka-clients-0.10.2.0.jar"/>
+    <pathelement location="${basedir}/dependencies/zkclient-0.10.jar"/>
+    <pathelement location="${basedir}/dependencies/zookeeper-3.4.10.jar"/>
+    <pathelement location="${basedir}/dependencies/scala-library-2.10.4.jar"/>
+    <path refid="library.maven:_org.apache.kafka:kafka-clients:0.9.0.0.classpath"/>
+    <path refid="library.maven:_org.xerial.snappy:snappy-java:1.1.1.7.classpath"/>
+    <path refid="library.maven:_net.jpountz.lz4:lz4:1.2.0.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.12.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-log4j12:1.7.12.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.17.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:23.0.classpath"/>
+    <path refid="library.maven:_com.google.code.findbugs:jsr305:1.3.9.classpath"/>
+    <path refid="library.maven:_com.google.errorprone:error_prone_annotations:2.0.18.classpath"/>
+    <path refid="library.maven:_com.google.j2objc:j2objc-annotations:1.1.classpath"/>
+    <path refid="library.maven:_org.codehaus.mojo:animal-sniffer-annotations:1.14.classpath"/>
+    <path refid="library.maven:_com.satori:satori-rtm-sdk:1.1.0.classpath"/>
+    <path refid="library.maven:_com.satori:satori-rtm-sdk-core:1.1.0.classpath"/>
+    <path refid="library.maven:_com.neovisionaries:nv-websocket-client:1.31.classpath"/>
+    <path refid="library.maven:_com.satori:satori-rtm-sdk-gson:1.1.0.classpath"/>
+    <path refid="library.maven:_com.google.code.gson:gson:2.8.0.classpath"/>
+    <path refid="library.maven:_com.googlecode.json-simple:json-simple:1.1.1.classpath"/>
+    <path refid="library.maven:_junit:junit:4.10.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.1.classpath"/>
+    <path refid="library.maven:_com.twitter:hbc-twitter4j:2.2.0.classpath"/>
+    <path refid="library.maven:_com.twitter:hbc-core:2.2.0.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_com.twitter:joauth:6.0.2.classpath"/>
+    <path refid="library.maven:_org.twitter4j:twitter4j-stream:4.0.1.classpath"/>
+    <path refid="library.maven:_org.twitter4j:twitter4j-core:4.0.5.classpath"/>
+    <path refid="library.maven:_com.rometools:rome:1.7.3.classpath"/>
+    <path refid="library.maven:_com.rometools:rome-utils:1.7.3.classpath"/>
+    <path refid="library.maven:_org.jdom:jdom2:2.0.6.classpath"/>
+  </path>
+  
+  <path id="kafkaapiclient.module.classpath">
+    <path refid="${module.jdk.classpath.kafkaapiclient}"/>
+    <pathelement location="${kafkaapiclient.output.dir}"/>
+    <pathelement location="${basedir}/dependencies/satori-sdk-java-core-1.0.2.jar"/>
+    <pathelement location="${basedir}/dependencies/ejml-0.23.jar"/>
+    <pathelement location="${basedir}/dependencies/kafka_2.10-0.10.2.1.jar"/>
+    <pathelement location="${basedir}/dependencies/kafka-clients-0.10.2.0.jar"/>
+    <pathelement location="${basedir}/dependencies/zkclient-0.10.jar"/>
+    <pathelement location="${basedir}/dependencies/zookeeper-3.4.10.jar"/>
+    <pathelement location="${basedir}/dependencies/scala-library-2.10.4.jar"/>
+    <path refid="library.maven:_org.apache.kafka:kafka-clients:0.9.0.0.classpath"/>
+    <path refid="library.maven:_org.xerial.snappy:snappy-java:1.1.1.7.classpath"/>
+    <path refid="library.maven:_net.jpountz.lz4:lz4:1.2.0.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.12.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-log4j12:1.7.12.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.17.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:23.0.classpath"/>
+    <path refid="library.maven:_com.google.code.findbugs:jsr305:1.3.9.classpath"/>
+    <path refid="library.maven:_com.google.errorprone:error_prone_annotations:2.0.18.classpath"/>
+    <path refid="library.maven:_com.google.j2objc:j2objc-annotations:1.1.classpath"/>
+    <path refid="library.maven:_org.codehaus.mojo:animal-sniffer-annotations:1.14.classpath"/>
+    <path refid="library.maven:_com.satori:satori-rtm-sdk:1.1.0.classpath"/>
+    <path refid="library.maven:_com.satori:satori-rtm-sdk-core:1.1.0.classpath"/>
+    <path refid="library.maven:_com.neovisionaries:nv-websocket-client:1.31.classpath"/>
+    <path refid="library.maven:_com.satori:satori-rtm-sdk-gson:1.1.0.classpath"/>
+    <path refid="library.maven:_com.google.code.gson:gson:2.8.0.classpath"/>
+    <path refid="library.maven:_com.googlecode.json-simple:json-simple:1.1.1.classpath"/>
+    <path refid="library.maven:_junit:junit:4.10.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.1.classpath"/>
+    <path refid="library.maven:_com.twitter:hbc-twitter4j:2.2.0.classpath"/>
+    <path refid="library.maven:_com.twitter:hbc-core:2.2.0.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_com.twitter:joauth:6.0.2.classpath"/>
+    <path refid="library.maven:_org.twitter4j:twitter4j-stream:4.0.1.classpath"/>
+    <path refid="library.maven:_org.twitter4j:twitter4j-core:4.0.5.classpath"/>
+    <path refid="library.maven:_com.rometools:rome:1.7.3.classpath"/>
+    <path refid="library.maven:_com.rometools:rome-utils:1.7.3.classpath"/>
+    <path refid="library.maven:_org.jdom:jdom2:2.0.6.classpath"/>
+  </path>
+  
+  <path id="kafkaapiclient.runtime.module.classpath">
+    <pathelement location="${kafkaapiclient.testoutput.dir}"/>
+    <pathelement location="${kafkaapiclient.output.dir}"/>
+    <pathelement location="${basedir}/dependencies/satori-sdk-java-core-1.0.2.jar"/>
+    <pathelement location="${basedir}/dependencies/ejml-0.23.jar"/>
+    <pathelement location="${basedir}/dependencies/kafka_2.10-0.10.2.1.jar"/>
+    <pathelement location="${basedir}/dependencies/kafka-clients-0.10.2.0.jar"/>
+    <pathelement location="${basedir}/dependencies/zkclient-0.10.jar"/>
+    <pathelement location="${basedir}/dependencies/zookeeper-3.4.10.jar"/>
+    <pathelement location="${basedir}/dependencies/scala-library-2.10.4.jar"/>
+    <path refid="library.maven:_org.apache.kafka:kafka-clients:0.9.0.0.classpath"/>
+    <path refid="library.maven:_org.xerial.snappy:snappy-java:1.1.1.7.classpath"/>
+    <path refid="library.maven:_net.jpountz.lz4:lz4:1.2.0.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.12.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-log4j12:1.7.12.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.17.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:23.0.classpath"/>
+    <path refid="library.maven:_com.google.code.findbugs:jsr305:1.3.9.classpath"/>
+    <path refid="library.maven:_com.google.errorprone:error_prone_annotations:2.0.18.classpath"/>
+    <path refid="library.maven:_com.google.j2objc:j2objc-annotations:1.1.classpath"/>
+    <path refid="library.maven:_org.codehaus.mojo:animal-sniffer-annotations:1.14.classpath"/>
+    <path refid="library.maven:_com.satori:satori-rtm-sdk:1.1.0.classpath"/>
+    <path refid="library.maven:_com.satori:satori-rtm-sdk-core:1.1.0.classpath"/>
+    <path refid="library.maven:_com.neovisionaries:nv-websocket-client:1.31.classpath"/>
+    <path refid="library.maven:_com.satori:satori-rtm-sdk-gson:1.1.0.classpath"/>
+    <path refid="library.maven:_com.google.code.gson:gson:2.8.0.classpath"/>
+    <path refid="library.maven:_com.googlecode.json-simple:json-simple:1.1.1.classpath"/>
+    <path refid="library.maven:_junit:junit:4.10.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.1.classpath"/>
+    <path refid="library.maven:_com.twitter:hbc-twitter4j:2.2.0.classpath"/>
+    <path refid="library.maven:_com.twitter:hbc-core:2.2.0.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_com.twitter:joauth:6.0.2.classpath"/>
+    <path refid="library.maven:_org.twitter4j:twitter4j-stream:4.0.1.classpath"/>
+    <path refid="library.maven:_org.twitter4j:twitter4j-core:4.0.5.classpath"/>
+    <path refid="library.maven:_com.rometools:rome:1.7.3.classpath"/>
+    <path refid="library.maven:_com.rometools:rome-utils:1.7.3.classpath"/>
+    <path refid="library.maven:_org.jdom:jdom2:2.0.6.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.kafkaapiclient">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.kafkaapiclient">
+    <patternset refid="excluded.from.module.kafkaapiclient"/>
+  </patternset>
+  
+  <path id="kafkaapiclient.module.sourcepath">
+    <dirset dir="${module.kafkaapiclient.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.kafkaapiclient" depends="compile.module.kafkaapiclient.production,compile.module.kafkaapiclient.tests" description="Compile module KafkaAPIClient"/>
+  
+  <target name="compile.module.kafkaapiclient.production" depends="register.custom.compilers" description="Compile module KafkaAPIClient; production classes">
+    <mkdir dir="${kafkaapiclient.output.dir}"/>
+    <javac2 destdir="${kafkaapiclient.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.kafkaapiclient}/javac">
+      <compilerarg line="${compiler.args.kafkaapiclient}"/>
+      <bootclasspath refid="kafkaapiclient.module.bootclasspath"/>
+      <classpath refid="kafkaapiclient.module.production.classpath"/>
+      <src refid="kafkaapiclient.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.kafkaapiclient"/>
+    </javac2>
+    
+    <copy todir="${kafkaapiclient.output.dir}">
+      <fileset dir="${module.kafkaapiclient.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.kafkaapiclient.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.kafkaapiclient.tests" depends="register.custom.compilers,compile.module.kafkaapiclient.production" description="compile module KafkaAPIClient; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.kafkaapiclient" description="cleanup module">
+    <delete dir="${kafkaapiclient.output.dir}"/>
+    <delete dir="${kafkaapiclient.testoutput.dir}"/>
+  </target>
+</project>

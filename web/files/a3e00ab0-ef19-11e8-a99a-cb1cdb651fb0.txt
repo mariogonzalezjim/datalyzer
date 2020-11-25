@@ -1,0 +1,30 @@
+<model appid="a3e00ab0-ef19-11e8-a99a-cb1cdb651fb0">
+<Data>
+<json>{"_id":"5be45c1ce7179a33cc15d174","description":"A streaming data channel via socket","name":"Testing TCP","url":"","protocol":"http://","type":"Socket","imageUrl":"/resources/editor/assets/images/logos/testing.png","auth":[null],"values":[{"name":"Timestamp","ruta":"time","type":"string","check":"false"},{"name":"Total Vehiculos Tunel","ruta":"totalCochesTunel","type":"string","check":"true"},{"name":"Total Vehiculos M30","ruta":"totalCochesM30","type":"string","check":"true"},{"name":"Media Velocidad Tunel","ruta":"velocidadMediaTunel","type":"string","check":"true"},{"name":"Media Velocidad M30","ruta":"velocidadMediaM30","type":"string","check":"true"}],"params":[{"type":"string","name":"port","example":"3333","description":"Socket Port","value":"3333"}],"model":"shape_DataSource","connections":[{"id":3}],"connectionsOut":[],"id":1,"nameId":"1","dataShape":{"type":"shape_DataSource","id":1,"x":121,"y":160,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Testing TCP"}}</json>
+<type>Socket</type>
+</Data>
+<Data>
+<json>{"_id":"5aa955c8f36d2876ecd35500","imageUrl":"/resources/editor/assets/images/logos/twitter-icon.png","type":"Twitter","protocol":"http://","url":"api.openweathermap.org/data/2.5/weather?","web":"https://developer.twitter.com/en/docs","description":"The Twitter Streaming API allows to collect a public stream of tweets in real-time that you can configure with differents parameters. By technical limitations, if you have several filters, they will work as an OR.","name":"Twitter","auth":[{"value":"KdeuzUGWHSvoww4zC1vW23nHP","name":"consumerKey"},{"value":"I6YLqS9rG0uwBiY5TA4Ip0fQucwx8QN8GsvtKeZ4o5N5NYxydo","name":"consumerSecret"},{"value":"398781676-3O1kF5AJee0K0qsiOWhp0lCZaoSqcNq2XU0UV44Y","name":"token"},{"value":"Y9ltlmw0G2u1T5HYJT3d0EYagjaSCLIwXoAIBkOeQ1D2I","name":"secret"}],"values":[{"name":"Tweet","ruta":"data.name","type":"string","check":"true"},{"name":"Date","ruta":"data.name","type":"string","check":"false"},{"name":"Name User","ruta":"data.name","type":"string","check":"false"},{"name":"Location","ruta":"data.name","type":"string","check":"false"}],"params":[{"type":"string","name":"track","example":"#realmadrid","description":"Keyword or hastag","value":"madrid"},{"type":"string","name":"locations","example":"-3.86,40.29 / -3.57,40.55 ","description":"Coordinates (SW-NE)","value":""}],"model":"shape_DataSource","connections":[{"id":4}],"connectionsOut":[],"id":2,"nameId":"TWITTER","dataShape":{"type":"shape_DataSource","id":2,"x":114,"y":519,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Twitter"}}</json>
+<type>Twitter</type>
+</Data>
+<Data>
+<json>{"name":"Pipeline","imageUrl":"/resources/editor/assets/images/logos/monitor2.png","type":"PipelineSimple","model":"shape_Pipeline","connections":[{"id":1}],"connectionsOut":[],"id":3,"nameId":"2","dataShape":{"type":"shape_Pipeline","id":3,"x":397,"y":201,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Pipeline"}}</json>
+<type>PipelineSimple</type>
+</Data>
+<Data>
+<json>{"name":"Pipeline","imageUrl":"/resources/editor/assets/images/logos/monitor2.png","type":"PipelineSimple","model":"shape_Pipeline","connections":[{"id":2}],"connectionsOut":[],"id":4,"nameId":"PIPE2","dataShape":{"type":"shape_Pipeline","id":4,"x":409,"y":535,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Pipeline"}}</json>
+<type>PipelineSimple</type>
+</Data>
+<Data>
+<json>{"name":"Table","imageUrl":"/resources/editor/assets/images/logos/online_results_table.png","type":"Results","model":"shape_Table","connections":[{"id":4}],"connectionsOut":[],"url":"charts/table.html","id":5,"nameId":"TABLE2","dataShape":{"type":"shape_Table","id":5,"x":642,"y":595,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Table"}}</json>
+<type>Results</type>
+</Data>
+<Data>
+<json>{"name":"Table","imageUrl":"/resources/editor/assets/images/logos/online_results_table.png","type":"Results","model":"shape_Table","connections":[{"id":3}],"connectionsOut":[],"url":"charts/table.html","id":6,"nameId":"3","dataShape":{"type":"shape_Table","id":6,"x":707,"y":84,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Table"}}</json>
+<type>Results</type>
+</Data>
+<Data>
+<json>{"name":"Charts","imageUrl":"/resources/editor/assets/images/logos/online_results_data.png","type":"Results","model":"shape_Charts","connections":[{"id":3}],"connectionsOut":[],"url":"charts/spline.html","id":7,"chart":"Spline","nameId":"4","dataShape":{"type":"shape_Charts","id":7,"x":683,"y":317,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Charts"}}</json>
+<type>Results</type>
+</Data>
+</model>

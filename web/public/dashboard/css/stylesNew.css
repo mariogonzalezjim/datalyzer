@@ -1,0 +1,30 @@
+.circle-icon {
+	border-radius: 50%;
+	width: 42px;
+	height: 42px; 
+	background: #cb0606;
+	margin: 0 auto;
+	/* width and height can be anything, as long as they're equal */
+}
+
+.alert-error {
+	/*background-color:#f06f6c;*/
+	background-color: #efcccc;
+	border-color: #ebccd1;
+	border-radius: 5px;
+	color: #cc514e;
+	font-size: 120%;
+}
+
+.alert-error > [data-notify="title"] {
+	font-weight: bold;
+}
+
+.iframe-dashboard{
+	display: inline-block;
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+	border: none;
+	overflow: hidden;
+}

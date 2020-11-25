@@ -1,0 +1,93 @@
+
+<body class="">
+
+  <!-- Main Container Fluid -->
+  <div class="container-fluid fluid menu-left">
+
+    <!-- Sidebar menu & content wrapper -->
+    <div id="wrapper">
+
+      <!-- Sidebar Menu -->
+
+      <!-- // Sidebar Menu END -->
+
+      <!-- Content -->
+      <div id="content-form">
+
+        <!-- Top navbar -->
+
+
+        <!-- Body START -->
+        <div class="billboard">
+          <div class="col-sm-6 col-sm-offset-3 middle">
+
+            <h1><span class="fa fa-sign-in icon"></span> Signup</h1>
+            <!-- show any messages that come back with authentication -->
+            {{#if message}}
+            <div class="alert alert-danger">{{message}}</div>
+            {{/if}}
+            <!-- LOGIN FORM -->
+            <form action="/signup" method="post">
+              <div class="row-fluid" style="margin-bottom:7px;">
+                <div class="span6">
+                  <label>Name</label>
+                  <input type="text" class="form-control" name="name" value="{{name}}">
+                </div>
+                <div class="span6">
+                  <label>Last Name</label>
+                  <input type="text" class="form-control" name="lastname" value="{{lastname}}">
+                </div>
+              </div>
+              <div class="row-fluid" style="margin-bottom:7px;">
+                <label>Email</label>
+                <input type="text" class="form-control" name="email" value="{{email}}">
+              </div>
+              <div class="row-fluid" style="margin-bottom:7px;">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password">
+              </div>
+              <div class="row-fluid" style="margin-bottom:10px;">
+                <label>Repeat Password</label>
+                <input type="password" class="form-control" name="passwordRepeat">
+              </div>
+
+              <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+            </form>
+
+            <hr>
+
+            <div class="font-size-medium">
+              <p>Already have an account? <a href="/login">Login</a></p>
+              <p>Or go <a href="/">home</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Body END -->
+
+
+
+      </div>
+      <!-- // Content END -->
+
+    </div>
+    <div class="clearfix"></div>
+    <!-- // Sidebar menu & content wrapper END -->
+
+
+    <!-- // Footer START -->
+    <div id="footer" class="hidden-print">
+      <!--  Copyright Line -->
+      <div class="copy">
+        Datalyzer @ 2017
+      </div>
+    </div>
+    <!-- // Footer END -->
+
+  </div>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+  <link rel="stylesheet" type="text/css" href="/sublime-theme/css/form.css">
+
+</body>
+

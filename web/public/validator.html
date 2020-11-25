@@ -1,0 +1,250 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+    <head>
+        <title></title>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="UTF-8">
+        <link rel="icon"          href="/assets/images/favicon.ico"  type="image/x-icon" id="favicon">
+        <link type="text/css" rel="stylesheet" href="/resources/lib/octicons/font/octicons.min.css" />
+        <link type="text/css" rel="stylesheet" href="/resources/lib/ionicons/css/ionicons.min.css" />
+        <link type="text/css" rel="stylesheet" href="/resources/lib/bootstrap/css/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="/resources/lib/prettify/src/prettify.css" />
+        
+        <!-- <SCRIPT src="./assets/javascript/dependencies.js"></SCRIPT> -->
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <SCRIPT src="/resources/lib/bootstrap/js/bootstrap.min.js"></SCRIPT>
+        <script src="/resources/lib/prettify/src/prettify.js"></script>
+        <!-- <SCRIPT src="./assets/settings/backend.js"></SCRIPT> -->
+        <!-- <SCRIPT src="./assets/javascript/app.js"></SCRIPT> -->
+        <!-- <SCRIPT src="./assets/javascript/charts.js"></SCRIPT> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+
+        <!-- <script src="http://code.highcharts.com/highcharts.js"></script> -->
+        <!--<script src="http://code.highcharts.com/modules/exporting.js"></script> -->
+        <style>
+            .loader {
+                border: 16px solid #ffffff;
+                border-radius: 50%;
+                border-top: 16px solid #97a9b5;
+                width: 80px;
+                margin: 0 auto;
+                height: 80px;
+                -webkit-animation: spin 2s linear infinite;
+                animation: spin 2s linear infinite;
+            }
+
+            @-webkit-keyframes spin {
+                0% { -webkit-transform: rotate(0deg); }
+                100% { -webkit-transform: rotate(360deg); }
+            }
+
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        </style>
+        <script type="text/javascript"> 
+
+            var socket; 
+            var arrayObjectsModel;
+            var appid;
+
+            $(document).ready(function () {
+                socket = io();
+				
+
+                socket.on("CodeGenerated", function(data){
+
+                    if(data=="OK"){
+                        var div = document.getElementById("content2");
+                        div.innerHTML="You can run your application now!";
+                        div.innerHTML+='<p></p><button id="buttonrun" onclick="RunButton()" style="color:#000000;">Run</button>';
+                        var divLoader= document.getElementById("loader");
+                        divLoader.style="display:none;";
+                    }else{
+                        var div = document.getElementById("content2");
+                        div.innerHTML="ERROR: " + data;
+                    }
+                });
+
+            });
+
+            function StartAppButton(){
+                document.getElementById("loader").style.display = "block";
+                document.getElementById("buttonstart").disabled=true;
+                socket.emit("dataserver" , "STARTAPP");
+            }
+
+            function CheckModelButton(){
+
+                var div= document.getElementById("content1");
+                var divLoader= document.getElementById("loader");
+                var divError = document.getElementById("errorDiv");
+
+                //get model
+                var model = getUrlVars()["model"];
+               
+                model= decodeURIComponent(model);
+                arrayObjectsModel= JSON.parse(model);
+                appid= getUrlVars()["appid"];
+
+
+                //check model
+                if(arrayObjectsModel.length==0 || arrayObjectsModel==null){
+                    divLoader.style="display:none;";
+                    div.style="display:none;";
+                    divError.innerHTML="ERROR: Empty model. Check your model and try again.";
+                    divError.innerHTML+='<p></p>';
+                    divError.style="display:block; font-size:20px ; color:#ffffff;";
+                    return;
+                }
+
+                // model OK, show compile button
+                divLoader.style="display:none;";
+                div.style="display:none;";
+                var div2= document.getElementById("content2");
+                div2.style="display:block;";
+
+                //console.log(getDashboardModels(arrayObjectsModel));
+
+            }
+
+            function CompileButton(){
+
+                var div2= document.getElementById("content2");
+                div2.innerHTML= "Generating...";
+                var divLoader= document.getElementById("loader");
+                divLoader.style="display:block;";
+
+                //send model to server
+                var modelxml= getModelXML();
+                console.log(modelxml);
+				
+                sendModelToServer(modelxml);
+			
+
+                //now wait to get response from the server through the socket 
+
+
+                /*
+                //testing
+                var form = document.createElement('form');
+                form.setAttribute('method', 'post');
+                form.setAttribute('action', '/private/edit_project');
+                form.style.display = 'hidden';
+                document.body.appendChild(form)
+                form.submit();
+                */
+
+            }
+
+            function RunButton(){
+                //debugger
+                // search the url 
+                //var url = getUrlResults(arrayObjectsModel);
+                var url = "private/dashboard?id=" + appid;
+                var baseUrl = window.location.protocol + "//" + window.location.host + "/";
+                url = baseUrl + url;
+                window.open(url,'_blank');
+                socket.emit("startAPP" , appid); 
+
+            }
+
+
+            /* UTILS */  
+            function getUrlVars() {
+                var vars = {};
+                var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+                                                         function(m,key,value) {
+                    vars[key] = value;
+                });
+                return vars;
+            }
+
+            function wait(ms){
+                var start = new Date().getTime();
+                var end = start;
+                while(end < start + ms) {
+                    end = new Date().getTime();
+                }
+            }
+
+            function getModelXML( array ){
+                var xml='<model appid="'+ appid+'">\n';
+                var index=0;
+                for(index=0; index< arrayObjectsModel.length ; index++){
+                    xml += '<Data>\n';
+                    xml += '<json>' + JSON.stringify(arrayObjectsModel[index]) + "</json>\n";
+                    xml += '<type>' + arrayObjectsModel[index].type +'</type>\n';        
+                    xml += '</Data>\n';
+                }    
+                xml +="</model>";
+				console.log(xml)
+                return xml;
+            }
+
+
+            function sendModelToServer(model){
+                
+                socket.emit("sendmodeltoserver" , model); 
+            }
+
+            function getUrlResults( array ){
+                var arguments="";
+                var index=0;
+                var models= getDashboardModels(array);
+                for(index=0; index<models.length ; index++){
+                    arguments += index + ':' + models[index] + '&';
+                }
+                //add appid to arguments
+                arguments += index + ':' + appid;
+                console.log(arguments)
+                console.log(btoa(arguments))
+                console.log(atob(btoa(arguments)))
+                return "dashboard/Dashboard.html?" + btoa(arguments);
+            }
+
+            function getDashboardModels(array){
+
+                var index;
+                var dashboardModel=[];
+               
+              
+                for(index=0; index<array.length ; index++){
+                  
+                    if(array[index].url!=null && (array[index].type=="Results" || array[index].type=="Storage") ){
+                        var param= array[index].url + '?';
+                        for(var r=0; r< array[index].connections.length; r++ ){
+                            param += r + '=' + appid + '-' + array[index].connections[r].id + '%' ;
+                        }
+
+                        dashboardModel.push(param);
+                    }
+                }
+                return dashboardModel;
+
+            }
+
+            /*  START   */
+
+            //start here, wait 2 sec before call function
+            window.setTimeout(CheckModelButton, 0);
+
+        </script>
+    </head>
+
+    <body style="background-color:#009DAC; color:#FFFFFF;font-size: 22px;" >    
+        <div id="content1" style="">
+            <p class="w3">Checking your model...</p>
+            <!-- <button id="buttonstart" onclick="CheckModelButton()" style="color:#000000;">Check</button> -->
+        </div>
+        <div id="content2" style="display: none">
+            <p class="w3">Your model is OK. Press the button to generate your personal application.</p>
+            <button id="buttonstart" onclick="CompileButton()" style="color:#000000;">Generate</button> 
+        </div>
+        <center><div class="loader" id="loader" style="display: block;"></div> </center>
+        <div class="error" id="errorDiv" style="display: none"></div> 
+    </body>
+
+</html>

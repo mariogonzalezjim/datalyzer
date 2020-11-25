@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<title>Datalyzer</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="/resources/lib/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/dashboard/css/charts/keen-dashboards.css">
+		<style type="text/css"></style>
+		<style id="holderjs-style" type="text/css"></style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		<script type="text/javascript" src="/dashboard/js/charts/jquery.js"></script>
+		<script type="text/javascript" src="/dashboard/js/charts/jquery-migrate.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>		
+		<script type="text/javascript" src="/dashboard/js/charts/utils.js"></script> 
+		<script type="text/javascript" src="/dashboard/js/charts/splineChart.js"></script> 
+
+	</head>
+	
+	
+	<body class="application">
+		<!--
+<div id="myNav" class="overlay">
+<iframe src="/loading.html" style="border: 0; position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%"> </iframe> 
+<!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+		<!--		</div> -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="chart-wrapper">
+						<!-- <div class="chart-title">
+<a href="#"  title="Play video" class="play"></a>HOLA
+</div> -->
+						<div id="chart-content" class="chart-stage">
+							<!-- <div id="container"  style="min-width: 310px; height: 360px; margin: 0 auto" ></div>
+<div id="container2" style="min-width: 310px; height: 360px; margin: 0 auto"></div> -->
+							<div id="container"  ></div>
+							<div id="container2" style="margin-top: 15px"></div>
+						</div>					
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		<script type="text/javascript" src="/resources/lib/holderjs/holder.js"></script>
+		<script>
+			Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 });
+		</script>
+		<script type="text/javascript" src="/resources/lib/keen-js/dist/keen.min.js"></script>
+		<script>
+
+			var level = document.location.search.replace(/\?/,'') || 0;
+			$('#nested').attr('href','frame.nested.html?'+(++level));
+
+		</script>
+
+		<script>
+			var iFrameResizer = {
+				messageCallback: function(message){
+					alert(message,parentIFrame.getId());
+				}
+			}
+
+			// addEventListener support for IE8
+			function bindEvent(element, eventName, eventHandler) {
+				if (element.addEventListener){
+					element.addEventListener(eventName, eventHandler, false);
+				} else if (element.attachEvent) {
+					element.attachEvent('on' + eventName, eventHandler);
+				}
+			}
+
+			// Listen to messages from parent window
+			bindEvent(window, 'message', function (e) {
+				console.log(e.data)
+				if(e.data.toString()=="Pause"){
+					pauseGraph();
+				}else if(e.data.toString()=="Stop"){
+					pauseGraph();
+				}else if(e.data.toString()=="Resume"){
+					resumeGraph();
+				}
+			});
+
+		</script>
+
+		<script type="text/javascript" src="/resources/lib/resizer/iframeResizer.contentWindow.min.js" defer></script>
+
+
+	</body>
+</html>

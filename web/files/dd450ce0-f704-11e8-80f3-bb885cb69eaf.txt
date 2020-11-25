@@ -1,0 +1,34 @@
+<model appid="dd450ce0-f704-11e8-80f3-bb885cb69eaf">
+<Data>
+<json>{"_id":"5be45c1ce7179a33cc15d174","description":"A streaming data channel via socket","name":"Testing TCP","url":"","protocol":"http://","type":"Socket","imageUrl":"/resources/editor/assets/images/logos/testing.png","auth":[null],"values":[{"name":"Timestamp","ruta":"time","type":"string","check":"true"},{"name":"Total Vehiculos Tunel","ruta":"totalCochesTunel","type":"string","check":"true"},{"name":"Total Vehiculos M30","ruta":"totalCochesM30","type":"string","check":"false"},{"name":"Media Velocidad Tunel","ruta":"velocidadMediaTunel","type":"string","check":"false"},{"name":"Media Velocidad M30","ruta":"velocidadMediaM30","type":"string","check":"false"}],"params":[{"type":"string","name":"port","example":"3333","description":"Socket Port","value":"3333"}],"model":"shape_DataSource","connections":[{"id":3}],"connectionsOut":[],"id":1,"nameId":"1","dataShape":{"type":"shape_DataSource","id":1,"x":107,"y":145,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Testing TCP"}}</json>
+<type>Socket</type>
+</Data>
+<Data>
+<json>{"_id":"5be45c1ce7179a33cc15d174","description":"A streaming data channel via socket","name":"Testing TCP","url":"","protocol":"http://","type":"Socket","imageUrl":"/resources/editor/assets/images/logos/testing.png","auth":[null],"values":[{"name":"Timestamp","ruta":"time","type":"string","check":"true"},{"name":"Total Vehiculos Tunel","ruta":"totalCochesTunel","type":"string","check":"true"},{"name":"Total Vehiculos M30","ruta":"totalCochesM30","type":"string","check":"false"},{"name":"Media Velocidad Tunel","ruta":"velocidadMediaTunel","type":"string","check":"false"},{"name":"Media Velocidad M30","ruta":"velocidadMediaM30","type":"string","check":"false"}],"params":[{"type":"string","name":"port","example":"3333","description":"Socket Port","value":"3334"}],"model":"shape_DataSource","connections":[{"id":4}],"connectionsOut":[],"id":2,"nameId":"SEGUNDO","dataShape":{"type":"shape_DataSource","id":2,"x":85,"y":375,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Testing TCP"}}</json>
+<type>Socket</type>
+</Data>
+<Data>
+<json>{"name":"Pipeline","imageUrl":"/resources/editor/assets/images/logos/monitor2.png","type":"PipelineSimple","model":"shape_Pipeline","connections":[{"id":1}],"connectionsOut":[{"id":5}],"id":3,"nameId":"2","dataShape":{"type":"shape_Pipeline","id":3,"x":376,"y":185,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Pipeline"}}</json>
+<type>PipelineSimple</type>
+</Data>
+<Data>
+<json>{"name":"Pipeline","imageUrl":"/resources/editor/assets/images/logos/monitor2.png","type":"PipelineSimple","model":"shape_Pipeline","connections":[{"id":2}],"connectionsOut":[{"id":6}],"id":4,"nameId":"PIPE2","dataShape":{"type":"shape_Pipeline","id":4,"x":392,"y":383,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Pipeline"}}</json>
+<type>PipelineSimple</type>
+</Data>
+<Data>
+<json>{"name":"Storage","imageUrl":"/resources/editor/assets/images/logos/storage_icon.png","type":"Storage","model":"shape_Storage","connections":[{"id":3}],"connectionsOut":[],"url":"charts/storagefile.html","id":5,"nameId":"PIPE1LOG","dataShape":{"type":"shape_Storage","id":5,"x":627,"y":236,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Storage"}}</json>
+<type>Storage</type>
+</Data>
+<Data>
+<json>{"name":"Storage","imageUrl":"/resources/editor/assets/images/logos/storage_icon.png","type":"Storage","model":"shape_Storage","connections":[{"id":4}],"connectionsOut":[],"url":"charts/storagefile.html","id":6,"nameId":"PIPE2LOG","dataShape":{"type":"shape_Storage","id":6,"x":663,"y":453,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Storage"}}</json>
+<type>Storage</type>
+</Data>
+<Data>
+<json>{"name":"Table","imageUrl":"/resources/editor/assets/images/logos/online_results_table.png","type":"Results","model":"shape_Table","connections":[{"id":3}],"connectionsOut":[],"url":"charts/table.html","id":7,"nameId":"TABLE1","dataShape":{"type":"shape_Table","id":7,"x":653,"y":90,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Table"}}</json>
+<type>Results</type>
+</Data>
+<Data>
+<json>{"name":"Table","imageUrl":"/resources/editor/assets/images/logos/online_results_table.png","type":"Results","model":"shape_Table","connections":[{"id":4}],"connectionsOut":[],"url":"charts/table.html","id":8,"nameId":"TABLE2","dataShape":{"type":"shape_Table","id":8,"x":619,"y":621,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Table"}}</json>
+<type>Results</type>
+</Data>
+</model>

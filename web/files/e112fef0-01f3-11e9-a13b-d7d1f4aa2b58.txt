@@ -1,0 +1,14 @@
+<model appid="e112fef0-01f3-11e9-a13b-d7d1f4aa2b58">
+<Data>
+<json>{"_id":"5aa955c8f36d2876ecd35500","imageUrl":"/resources/editor/assets/images/logos/twitter-icon.png","type":"Twitter","protocol":"http://","url":"api.openweathermap.org/data/2.5/weather?","web":"https://developer.twitter.com/en/docs","description":"The Twitter Streaming API allows to collect a public stream of tweets in real-time that you can configure with differents parameters. By technical limitations, if you have several filters, they will work as an OR.","name":"Twitter","auth":[{"value":"KdeuzUGWHSvoww4zC1vW23nHP","name":"consumerKey"},{"value":"I6YLqS9rG0uwBiY5TA4Ip0fQucwx8QN8GsvtKeZ4o5N5NYxydo","name":"consumerSecret"},{"value":"398781676-3O1kF5AJee0K0qsiOWhp0lCZaoSqcNq2XU0UV44Y","name":"token"},{"value":"Y9ltlmw0G2u1T5HYJT3d0EYagjaSCLIwXoAIBkOeQ1D2I","name":"secret"}],"values":[{"name":"Tweet","ruta":"data.name","type":"string","check":"true"},{"name":"Date","ruta":"data.name","type":"string","check":"true"},{"name":"Name User","ruta":"data.name","type":"string","check":"true"},{"name":"Location","ruta":"data.name","type":"string","check":"true"}],"params":[{"type":"string","name":"track","example":"#realmadrid","description":"Keyword or hastag","value":"madrid"},{"type":"string","name":"locations","example":"-3.86,40.29 / -3.57,40.55 ","description":"Coordinates (SW-NE)","value":""}],"model":"shape_DataSource","connections":[{"id":2}],"connectionsOut":[],"id":1,"nameId":"1"}</json>
+<type>Twitter</type>
+</Data>
+<Data>
+<json>{"name":"Pipeline","imageUrl":"/resources/editor/assets/images/logos/monitor2.png","type":"PipelineSimple","model":"shape_Pipeline","connections":[{"id":1}],"connectionsOut":[],"id":2,"nameId":"2"}</json>
+<type>PipelineSimple</type>
+</Data>
+<Data>
+<json>{"name":"Table","imageUrl":"/resources/editor/assets/images/logos/online_results_table.png","type":"Results","model":"shape_Table","connections":[{"id":2}],"connectionsOut":[],"url":"charts/table.html","id":3,"nameId":"3"}</json>
+<type>Results</type>
+</Data>
+</model>

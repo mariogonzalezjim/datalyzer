@@ -1,0 +1,34 @@
+<model appid="8ce44970-02dd-11e9-8697-63c58dee6159">
+<Data>
+<json>{"name":"Pipeline","imageUrl":"/resources/editor/assets/images/logos/monitor2.png","type":"PipelineSimple","model":"shape_Pipeline","connections":[{"id":9},{"id":4}],"connectionsOut":[],"id":2}</json>
+<type>PipelineSimple</type>
+</Data>
+<Data>
+<json>{"name":"Table","imageUrl":"/resources/editor/assets/images/logos/online_results_table.png","type":"Results","model":"shape_Table","connections":[{"id":2}],"connectionsOut":[],"url":"charts/table.html","id":3}</json>
+<type>Results</type>
+</Data>
+<Data>
+<json>{"_id":"5aa955c8f36d2876ecd35500","imageUrl":"/resources/editor/assets/images/logos/twitter-icon.png","type":"Twitter","protocol":"http://","url":"api.openweathermap.org/data/2.5/weather?","web":"https://developer.twitter.com/en/docs","description":"The Twitter Streaming API allows to collect a public stream of tweets in real-time that you can configure with differents parameters. By technical limitations, if you have several filters, they will work as an OR.","name":"Twitter","acessKind":"PushType","auth":[{"value":"KdeuzUGWHSvoww4zC1vW23nHP","name":"consumerKey"},{"value":"I6YLqS9rG0uwBiY5TA4Ip0fQucwx8QN8GsvtKeZ4o5N5NYxydo","name":"consumerSecret"},{"value":"398781676-3O1kF5AJee0K0qsiOWhp0lCZaoSqcNq2XU0UV44Y","name":"token"},{"value":"Y9ltlmw0G2u1T5HYJT3d0EYagjaSCLIwXoAIBkOeQ1D2I","name":"secret"}],"values":[{"name":"Tweet","ruta":"data.name","type":"string","check":"false"},{"name":"Date","ruta":"data.name","type":"string","check":"false"},{"name":"Name User","ruta":"data.name","type":"string","check":"false"},{"name":"Location","ruta":"data.name","type":"string","check":"false"}],"params":[{"type":"string","name":"track","example":"#realmadrid","description":"Keyword or hastag","value":""},{"type":"string","name":"locations","example":"-3.86,40.29 / -3.57,40.55 ","description":"Coordinates (SW-NE)","value":""}],"model":"shape_DataSource","connections":[{"id":2}],"connectionsOut":[],"id":4}</json>
+<type>Twitter</type>
+</Data>
+<Data>
+<json>{"name":"Charts","imageUrl":"/resources/editor/assets/images/logos/online_results_data.png","type":"Results","model":"shape_Charts","connections":[{"id":2}],"connectionsOut":[],"url":"charts/table.html","id":5}</json>
+<type>Results</type>
+</Data>
+<Data>
+<json>{"_id":"5c125733e7179a2e270805d3","description":"A streaming data channel via socket","name":"Datos Tráfico","url":"http://www.mc30.es/images/xml/DatosTrafico.xml","protocol":"http://","type":"Xml","imageUrl":"/resources/editor/assets/images/logos/testing.png","acessKind":"PushType","rate":"","auth":[null],"values":[{"name":"Total Vehiculos Tunel","ruta":"DatosTrafico.DatoGlobal[0].VALOR","type":"string","check":"false"},{"name":"Velocidad Media Tunel","ruta":"DatosTrafico.DatoGlobal[2].VALOR","type":"string","check":"false"},{"name":"Velocidad Media M30","ruta":"DatosTrafico.DatoGlobal[3].VALOR","type":"string","check":"false"},{"name":"Fecha actualizacion","ruta":"DatosTrafico.DatoGlobal[4].FECHA","type":"string","check":"false"}],"params":[],"model":"shape_DataSource","connections":[{"id":7},{"id":7}],"connectionsOut":[],"id":6}</json>
+<type>Xml</type>
+</Data>
+<Data>
+<json>{"name":"Pipeline","imageUrl":"/resources/editor/assets/images/logos/monitor2.png","type":"PipelineSimple","model":"shape_Pipeline","connections":[{"id":6},{"id":6}],"connectionsOut":[{"id":8}],"id":7}</json>
+<type>PipelineSimple</type>
+</Data>
+<Data>
+<json>{"name":"Storage","imageUrl":"/resources/editor/assets/images/logos/storage_icon.png","type":"Storage","model":"shape_Storage","connections":[{"id":7}],"connectionsOut":[],"url":"charts/storagefile.html","id":8}</json>
+<type>Storage</type>
+</Data>
+<Data>
+<json>{"_id":"5aa955c8f36d2876ecd35500","imageUrl":"/resources/editor/assets/images/logos/twitter-icon.png","type":"Twitter","protocol":"http://","url":"api.openweathermap.org/data/2.5/weather?","web":"https://developer.twitter.com/en/docs","description":"The Twitter Streaming API allows to collect a public stream of tweets in real-time that you can configure with differents parameters. By technical limitations, if you have several filters, they will work as an OR.","name":"Twitter","acessKind":"PushType","auth":[{"value":"KdeuzUGWHSvoww4zC1vW23nHP","name":"consumerKey"},{"value":"I6YLqS9rG0uwBiY5TA4Ip0fQucwx8QN8GsvtKeZ4o5N5NYxydo","name":"consumerSecret"},{"value":"398781676-3O1kF5AJee0K0qsiOWhp0lCZaoSqcNq2XU0UV44Y","name":"token"},{"value":"Y9ltlmw0G2u1T5HYJT3d0EYagjaSCLIwXoAIBkOeQ1D2I","name":"secret"}],"values":[{"name":"Tweet","ruta":"data.name","type":"string","check":"false"},{"name":"Date","ruta":"data.name","type":"string","check":"false"},{"name":"Name User","ruta":"data.name","type":"string","check":"false"},{"name":"Location","ruta":"data.name","type":"string","check":"false"}],"params":[{"type":"string","name":"track","example":"#realmadrid","description":"Keyword or hastag","value":""},{"type":"string","name":"locations","example":"-3.86,40.29 / -3.57,40.55 ","description":"Coordinates (SW-NE)","value":""}],"model":"shape_DataSource","connections":[{"id":2}],"connectionsOut":[],"id":9}</json>
+<type>Twitter</type>
+</Data>
+</model>

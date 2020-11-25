@@ -1,0 +1,76 @@
+<model appid="testing">
+<Data>
+<json>
+{ "description" : "Es una conexion socket TCP",
+  "name": "TCP Socket", 
+  "url" : "/", 
+  "protocol" : "http://", 
+  "type" : "Socket", 
+  "imageUrl" : "http://img",
+  "acessKind" : "PushType",
+  "auth" : [  ], 
+  "values" : [ 
+                {  "name": "Timestamp" ,
+                   "ruta": "time" ,
+                   "type": "integer" ,
+                   "check": "true"   
+                }  ,  
+                {  "name": "Total Vehiculos Tunel" ,
+                   "ruta": "totalCochesTunel" ,
+                   "type": "string" ,
+                   "check": "true"   
+                }  
+             ],
+  "params" : [ 
+                {  "type" : "integer" ,
+				   "name" : "port" ,
+                   "example" : "3333" ,
+                   "description" : "Socket Port" ,
+                   "value" : "3333" 
+                }  
+             ],
+   "model": "shape_DataSource",
+   "connections" : [ 
+                 { "id": "2" }  
+                   ],
+   "connectionsOut" : [ ],
+   "id" : "1", 
+   "nameId" : "socket", 
+}
+</json>
+<type>Socket</type>
+</Data><Data>
+<json>
+{  "name" : "Pipeline",
+   "imageUrl" : "/resources/editor/assets/images/logos/monitor2.png",
+   "type" : "PipelineSimple",
+   "model" : "shape_Pipeline",
+   "connections" : [ 
+               { "id": "1" }  
+                   ],
+   "connectionsOut" : [ ],
+   "id" : "2", 
+   "nameId" : "2"
+}
+</json>
+<type>PipelineSimple</type>
+</Data>
+<Data>
+<json>
+{  "name" : "Table",
+   "imageUrl" : "/resources/editor/assets/images/logos/online_results_table.png",
+   "type" : "Results",
+   "model" : "shape_Table",
+   "connections" : [ 
+               { "id": "2" }  
+                   ],
+   "connectionsOut" : [ ],
+   "id" : "3", 
+   "url" ; "charts/table.html", 
+   "nameId" : "3"
+}
+</json>
+<type>Results</type>
+</Data></model>
+
+

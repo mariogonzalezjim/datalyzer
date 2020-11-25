@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.spnotes.kafka</groupId>
+    <artifactId>KafkaAPIClient</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+         <dependency>
+             <groupId>org.apache.kafka</groupId>
+             <artifactId>kafka-clients</artifactId>
+             <version>0.9.0.0</version>
+         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.satori/satori-sdk-java-core -->
+        <!-- <dependency>
+            <groupId>com.satori</groupId>
+            <artifactId>satori-sdk-java-core</artifactId>
+            <version>1.0.2</version>
+        </dependency> -->
+        <!-- https://mvnrepository.com/artifact/com.satori/satori-rtm-sdk-gson -->
+        <!-- <dependency>
+            <groupId>com.satori</groupId>
+            <artifactId>satori-rtm-sdk-gson</artifactId>
+            <version>1.0.3</version>
+        </dependency> -->
+        <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.satori</groupId>
+            <artifactId>satori-rtm-sdk</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <!--  <dependency>
+              <groupId>com.twitter</groupId>
+              <artifactId>hbc-core</artifactId>
+              <version>2.2.0</version>
+          </dependency> -->
+        <!-- https://mvnrepository.com/artifact/com.twitter/hbc-twitter4j -->
+        <dependency>
+            <groupId>com.twitter</groupId>
+            <artifactId>hbc-twitter4j</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.twitter4j/twitter4j-core -->
+        <dependency>
+            <groupId>org.twitter4j</groupId>
+            <artifactId>twitter4j-core</artifactId>
+            <version>4.0.5</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/edu.stanford.nlp/stanford-corenlp -->
+        <!-- <dependency>
+             <groupId>edu.stanford.nlp</groupId>
+             <artifactId>stanford-corenlp</artifactId>
+             <version>3.7.0</version>
+         </dependency> -->
+        <!-- <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-parser</artifactId>
+            <version>3.7.0</version>
+        </dependency> -->
+        <!-- <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>3.7.0</version>
+            <classifier>models</classifier>
+        </dependency> -->
+        <!-- https://mvnrepository.com/artifact/com.rometools/rome -->
+        <dependency>
+            <groupId>com.rometools</groupId>
+            <artifactId>rome</artifactId>
+            <version>1.7.3</version>
+        </dependency>
+        <!-- <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>0.7</version>
+        </dependency> -->
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.Main</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

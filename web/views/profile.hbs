@@ -1,0 +1,96 @@
+<!-- Body START -->
+
+<div id="login" style="margin-top:40px;" >
+
+  <div class="container login">
+
+    <div class="wrapper">
+      <div class="left" style=" margin: 0 auto; text-align: right"><img class="logo-banner" width="100px" src="/resources/theme/images/blankuser.jpg"></div>
+      <h3 class="header-h main-title text-black center">Profile</h3>
+
+      <div class="widget widget-heading-simple widget-body-simple">
+
+        <div class="widget-body form form-group" style="background: #fff">
+          <h3>{{user.local.name}} {{user.local.lastname}}</h3>
+          <!-- Form -->
+          <form action="/update_account" method="post" >
+            <div class="row-fluid">
+              <div class="span6">
+                <label>Firstname</label>
+                <input class="form-control" name="name" type="text" value="{{user.local.name}}">
+                <input name="id" name="id" class="form-control" type="hidden" value="5a2eafeec2dc5dac4927e499"> 
+              </div>
+              <div class="span6">
+                <label>Lastname</label>
+                <input name="lastname" class="form-control" type="text" value="{{user.local.lastname}}">
+              </div>
+            </div>
+            <label>Email</label>
+            <input name="email" type="email" class="form-control" value="{{user.local.email}}" readonly>
+            <p></p>
+
+            <div class="separator bottom"></div> 
+            <div class="row-fluid">
+              <div class="span12 center">
+                <button class="btn btn-block btn-large btn-primary" type="submit">Update personal data</button>
+              </div>
+            </div>
+
+          </form>
+          <!-- // Form END -->
+
+        </div>
+      </div>
+      <!-- // Box END -->
+      <hr style="margin: 20px 0">
+      {{#if messageError}}
+      <div class="alert alert-danger">{{messageError}}</div>
+      {{/if}}
+      {{#if message}}
+      <div class="alert alert-success">{{message}}</div>
+      {{/if}}
+      <h3 class="header-h main-title text-black center">Change Password</h3>
+      <div class="widget widget-heading-simple widget-body-simple">
+
+        <div class="widget-body form form-group" style="background: #fff">
+          <!-- Form -->
+          <form action="/change_password" method="post" >
+            <div class="row-fluid">
+              <div class="span6">
+                <label>Current Password</label>
+                <input class="form-control" name="currentpassword" type="password" value="">
+                <input name="email" type="hidden" class="form-control" value="{{user.local.email}}" readonly>
+              </div>
+            </div>
+            <div class="row-fluid">
+              <div class="span6">
+                <label>New Password</label>
+                <input class="form-control" name="newpassword" type="password" value="" autocomplete="off">
+              </div>
+            </div>
+            <div class="row-fluid">
+              <div class="span6">
+                <label>Repeat Password</label>
+                <input class="form-control" name="newpasswordrepeat" type="password" value="" autocomplete="off">
+              </div>
+            </div>
+            <p></p>
+
+            <div class="separator bottom"></div> 
+            <div class="row-fluid">
+              <div class="span12 center">
+                <button class="btn btn-block btn-large btn-primary" type="submit">Change password</button>
+              </div>
+            </div>
+
+          </form>
+          <!-- // Form END -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Body END -->
+

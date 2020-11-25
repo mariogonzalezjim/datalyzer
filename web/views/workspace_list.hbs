@@ -1,0 +1,77 @@
+<!-- Body START -->
+
+
+
+<!-- Breadcrumb START -->
+<ul class="breadcrumb">
+  <li>hola</li>
+  <li><a href="#" class="glyphicons dashboard"><i></i> hola</a></li>
+  <li class="divider"></li>
+  <li>Use</li>
+  <li class="divider"></li>
+  <li>My workspace</li>
+</ul>
+<!-- Breadcrumb END -->
+
+<!-- // Heading END -->
+
+<div class="innerLR">
+  <div class="box-generic">
+    <div class="row-fluid">
+      <div class="span8">
+        <h3 class="header-h main-title">My projects</h3>
+        <p>This is your personal workspace. You can create a new projects or select one of the list below.</p>
+        <span> Projects in your workspace: {{numberOfProjects}} </span>
+      </div>
+      <div class="span4 buttons text-right" style="margin-top: 20px">
+        <a href="/private/workspace/create" class="btn btn-primary" title="New Workspace"><i class="icon-plus"></i> New Project</a>			
+      </div>
+    </div>
+  </div>
+  <div class="widget widget-heading-simple" style="margin-rigth:100px;">
+    <div class="widget-body">
+
+      <!-- Table -->
+      <table class="dynamicTable tableTools table table-striped table-white">
+        <!-- Table heading -->
+        <thead>
+          <tr>						
+            <th>Name</th>
+            <th>Created</th>
+            <th>Last Update</th>
+            <th>Descripcion</th>
+
+
+          </tr>
+        </thead>
+        <!-- // Table heading END -->
+
+        <!-- Table body -->
+        <tbody>         
+          {{#each projects}} 
+          <tr class="gradeX">						
+            <td><a href="/private/project?id={{this.id}}">{{this.name}}</a></td>
+            <td >{{this.dateCreated}}</td> 
+            <td>{{this.dateLastModified}}</td> 
+            <td>{{this.description}}</td> 
+                
+          </tr>
+          {{/each}}
+          <!-- 					// Table row END -->
+        
+
+
+      </tbody>
+    <!-- // Table body END -->
+
+    </table>
+  <!-- // Table END -->
+
+</div>
+</div>
+
+</div>	
+
+
+<!-- Body END -->
+

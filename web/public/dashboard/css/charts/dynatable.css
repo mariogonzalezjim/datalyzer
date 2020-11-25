@@ -1,0 +1,172 @@
+/*
+* jQuery Dynatable plugin 0.3.1
+*
+* Copyright (c) 2014 Steve Schwartz (JangoSteve)
+*
+* Dual licensed under the AGPL and Proprietary licenses:
+*   http://www.dynatable.com/license/
+*
+* Date: Tue Jan 02 2014
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800);
+
+
+.play {
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 36px solid #2c3e50;
+  margin: 60px auto 30px auto;
+  position: relative;
+  /* z-index: 1; */
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  left: 6px;
+}
+.play:before {
+  content: '';
+  position: absolute;
+  top: -45px;
+  left: -69px;
+  bottom: -45px;
+  right: -21px;
+  border-radius: 50%;
+  border: 6px solid #2c3e50;
+  /*  z-index: 2; */
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+}
+.play:after {
+  content: '';
+  opacity: 0;
+  transition: opacity 0.6s;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+}
+.play:hover:before, .play:focus:before {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+}
+.play.active {
+  border-color: transparent;
+}
+.play.active:after {
+  content: '';
+  opacity: 1;
+  width: 42px;
+  height: 48px;
+  background: #2c3e50;
+  position: absolute;
+  right: 3px;
+  top: -24px;
+  border-left: 12px solid #2c3e50;
+  box-shadow: inset 18px 0 0 0 #f9f9f9;
+}
+
+#divtable {
+  width: 90%;
+ /* max-width: 50%; */
+  margin: auto;
+}
+table {
+  /*width: 100%; */
+  /* margin-bottom: 20px; */
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+table-bordered th, table-bordered td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+table, td, th {
+  border: 1px solid gray;
+}
+select {
+  width: 220px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+select, input[type="file"] {
+  height: 30px;
+  line-height: 30px;
+  padding: 4px 6px;
+  font-size: 14px;
+}
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 20px;
+}
+th {
+  background: #00939f;
+}
+th a {
+  color: #fff;
+}
+th a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.dynatable-search {
+  float: right;
+  margin-bottom: 10px;
+}
+
+.dynatable-pagination-links {
+  float: right;
+}
+
+.dynatable-record-count {
+  display: block;
+  padding: 5px 0;
+}
+
+.dynatable-pagination-links span,
+.dynatable-pagination-links li {
+  display: inline-block;
+}
+
+.dynatable-page-link,
+.dynatable-page-break {
+  display: block;
+  padding: 5px 7px;
+}
+
+.dynatable-page-link {
+  cursor: pointer;
+}
+
+.dynatable-active-page,
+.dynatable-disabled-page {
+  cursor: text;
+}
+.dynatable-active-page:hover,
+.dynatable-disabled-page:hover {
+  text-decoration: none;
+}
+
+.dynatable-active-page {
+  background: #006a72;
+  border-radius: 5px;
+  color: #fff;
+}
+.dynatable-active-page:hover {
+  color: #fff;
+}
+.dynatable-disabled-page,
+.dynatable-disabled-page:hover {
+  background: none;
+  color: #999;
+}

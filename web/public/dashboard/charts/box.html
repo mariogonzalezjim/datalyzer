@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>Datalyzer</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="/resources/lib/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/dashboard/css/charts/keen-dashboards.css">
+		<style type="text/css"></style>
+		<style id="holderjs-style" type="text/css"></style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		<script type="text/javascript" src="/dashboard/js/charts/jquery.js"></script>
+		<script type="text/javascript" src="/dashboard/js/charts/jquery-migrate.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>		
+		<script type="text/javascript" src="/dashboard/js/charts/utils.js"></script> 
+		 <script type="text/javascript" src="/dashboard/js/charts/boxChart.js"></script> 
+
+	</head>
+	
+	
+	<body class="application">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="chart-wrapper">
+						
+						<div id="chart-content" class="chart-stage">
+							<div id="container" style="width: 80%; max-width: 800px;  margin: 0 auto"></div>
+							<!-- <button id="large">Update</button> -->
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+		<script type="text/javascript" src="/resources/lib/holderjs/holder.js"></script>
+		<script>
+			Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 });
+		</script>
+		<script type="text/javascript" src="/resources/lib/keen-js/dist/keen.min.js"></script>
+		<script>
+		
+			var level = document.location.search.replace(/\?/,'') || 0;
+			$('#nested').attr('href','frame.nested.html?'+(++level));
+
+		</script>
+
+		<script>
+			var iFrameResizer = {
+				messageCallback: function(message){
+					alert(message,parentIFrame.getId());
+				}
+			}
+		</script>
+
+		<script type="text/javascript" src="/resources/lib/resizer/iframeResizer.contentWindow.min.js" defer></script>
+
+
+
+	</body>
+</html>

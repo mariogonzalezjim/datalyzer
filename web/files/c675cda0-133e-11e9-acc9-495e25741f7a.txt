@@ -1,0 +1,26 @@
+<model appid="c675cda0-133e-11e9-acc9-495e25741f7a">
+<Data>
+<json>{"name":"Charts","imageUrl":"/resources/editor/assets/images/logos/online_results_data.png","type":"Results","model":"shape_Charts","connections":[{"id":2}],"connectionsOut":[],"url":"charts/spline.html","id":1,"configuration":{"intervalFixed":false,"frecuency":false,"timeInterval":"100"},"chart":"Spline","nameId":"3","dataShape":{"type":"shape_Charts","id":1,"x":648,"y":177,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Charts"}}</json>
+<type>Results</type>
+</Data>
+<Data>
+<json>{"name":"Pipeline","imageUrl":"/resources/editor/assets/images/logos/monitor2.png","type":"PipelineSimple","model":"shape_Pipeline","connections":[{"id":3}],"connectionsOut":[],"id":2,"dataShape":{"type":"shape_Pipeline","id":2,"x":339,"y":211,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Pipeline"},"nameId":"2"}</json>
+<type>PipelineSimple</type>
+</Data>
+<Data>
+<json>{"_id":"5c125733e7179a2e270805d3","description":"A streaming data channel via socket","name":"Datos Tráfico","url":"http://www.mc30.es/images/xml/DatosTrafico.xml","protocol":"http://","type":"Xml","imageUrl":"/resources/editor/assets/images/logos/testing.png","acessKind":"PushType","rate":"20000","auth":[null],"values":[{"name":"Total Vehiculos Tunel","ruta":"DatosTrafico.DatoGlobal[0].VALOR","type":"string","check":"true"},{"name":"Velocidad Media Tunel","ruta":"DatosTrafico.DatoGlobal[2].VALOR","type":"string","check":"false"},{"name":"Velocidad Media M30","ruta":"DatosTrafico.DatoGlobal[3].VALOR","type":"string","check":"false"},{"name":"Fecha actualizacion","ruta":"DatosTrafico.DatoGlobal[4].FECHA","type":"string","check":"false"}],"params":[],"model":"shape_DataSource","connections":[{"id":2}],"connectionsOut":[],"id":3,"nameId":"1","dataShape":{"type":"shape_DataSource","id":3,"x":59,"y":122,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Datos Tráfico"}}</json>
+<type>Xml</type>
+</Data>
+<Data>
+<json>{"_id":"5c125733e7179a2e270805d3","description":"A streaming data channel via socket","name":"Datos Tráfico","url":"http://www.mc30.es/images/xml/DatosTrafico.xml","protocol":"http://","type":"Xml","imageUrl":"/resources/editor/assets/images/logos/testing.png","acessKind":"PushType","rate":"20000","auth":[null],"values":[{"name":"Total Vehiculos Tunel","ruta":"DatosTrafico.DatoGlobal[0].VALOR","type":"string","check":"false"},{"name":"Velocidad Media Tunel","ruta":"DatosTrafico.DatoGlobal[2].VALOR","type":"string","check":"true"},{"name":"Velocidad Media M30","ruta":"DatosTrafico.DatoGlobal[3].VALOR","type":"string","check":"false"},{"name":"Fecha actualizacion","ruta":"DatosTrafico.DatoGlobal[4].FECHA","type":"string","check":"false"}],"params":[],"model":"shape_DataSource","connections":[{"id":5}],"connectionsOut":[],"id":4,"nameId":"DATA2","dataShape":{"type":"shape_DataSource","id":4,"x":59,"y":404,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Datos Tráfico"}}</json>
+<type>Xml</type>
+</Data>
+<Data>
+<json>{"name":"Pipeline","imageUrl":"/resources/editor/assets/images/logos/monitor2.png","type":"PipelineSimple","model":"shape_Pipeline","connections":[{"id":4}],"connectionsOut":[],"id":5,"nameId":"4","dataShape":{"type":"shape_Pipeline","id":5,"x":290,"y":441,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Pipeline"}}</json>
+<type>PipelineSimple</type>
+</Data>
+<Data>
+<json>{"name":"Charts","imageUrl":"/resources/editor/assets/images/logos/online_results_data.png","type":"Results","model":"shape_Charts","connections":[{"id":5}],"connectionsOut":[],"url":"charts/spline.html","id":6,"configuration":{"intervalFixed":false,"frecuency":false,"timeInterval":"0"},"chart":"Spline","nameId":"5","dataShape":{"type":"shape_Charts","id":6,"x":574,"y":414,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Charts"}}</json>
+<type>Results</type>
+</Data>
+</model>

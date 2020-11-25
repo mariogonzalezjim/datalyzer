@@ -1,0 +1,161 @@
+<link type="text/css" rel="stylesheet" href="/resources/lib/octicons/font/octicons.min.css" />
+<link type="text/css" rel="stylesheet" href="/resources/lib/ionicons/css/ionicons.min.css" />
+<!--<link type="text/css" rel="stylesheet" href="/resources/lib/bootstrap/css/bootstrap.min.css" /> -->
+<link type="text/css" rel="stylesheet" href="/resources/lib/prettify/src/prettify.css" />
+<link type="text/css" rel="stylesheet" href="/resources/editor/assets/css/main.css" />
+<link type="text/css" rel="stylesheet" href="/resources/editor/assets/css/depend.css" />
+
+<script src="/resources/editor/assets/javascript/dependencies.js"></script> 
+<script src="/resources/editor/assets/settings/backend.js"></script>
+<script src="/resources/editor/assets/javascript/app.js"></script>
+
+
+<style>
+    .x.axis line {
+        shape-rendering: auto;
+    }
+
+    .line {
+        fill: none;
+        stroke: #000;
+        stroke-width: 1px;
+    }
+
+</style>
+<script type="text/javascript">
+    var app = null;
+    var socket = null;
+    var modelDSL='{{project.modelDSL}}'
+    modelDSL = modelDSL.replace(/&quot;/g,'"')
+
+
+    $(window).load(function () {
+        //console.log(conf);
+        
+        $.getScript("/resources/editor/assets/shapes/index.js",function(){
+
+            socket = io();    
+            app = new Application();
+            $('.lazyload').lazyload({ trigger: "appear"});
+
+            hardware.init(socket);
+        });
+    }); 
+</script>
+
+<!-- Body START -->
+
+<ul class="breadcrumb">
+    <li>You are here</li>
+    <li><a href="#" class="glyphicons dashboard"><i></i> Public area</a></li>
+    <li class="divider"></li>
+    Use
+    <li class="divider"></li>
+    Create Workspace
+</ul>
+
+
+<div id="layout" class="editor" data="{{project.id}}">
+
+    <div class="tab-content">
+
+        <div class="tab-pane active" id="editor">
+            <div class="workspace">
+                <div class="palette ">
+                    <span class="title2">Data Source</span>
+                    <input type="text" id="filter"  placeholder="Filter..." autofocus>
+
+                    <div  id="paletteElementsScroll">
+                        <div id="paletteElements" class="row ">
+
+                        </div>
+                        <div id="paletteElementsOverlay"></div>
+                    </div>
+                </div>
+                <div class="toolbar">
+
+
+                    <span class="group">
+                        <span id="editDelete" class="ion-ios-close-empty icon disabled"></span>
+                    </span>
+
+                    <span class="group">
+                        <span id="editUndo" class="ion-ios-arrow-left icon disabled"></span>
+                        <span id="editRedo" class="ion-ios-arrow-right icon disabled"></span>
+                    </span>
+
+                    <a href="#" class="morph_btn play" id="simulationStartStop">
+                        <span>
+                            <span class="s1"></span>
+                            <span class="s2"></span>
+                            <span class="s3"></span>
+                        </span>
+                    </a>
+
+                </div> 
+                <div class="content" id="draw2dCanvasWrapper">
+                    <div class="canvas" id="draw2dCanvas" oncontextmenu="return false;">
+                    </div>
+                    <div id="canvas_zoom" class="btn-group">
+                        <button type="button" id="canvas_zoom_in"     class="btn highlight">&#8210;</button>
+                        <button type="button" id="canvas_zoom_normal" class="btn highlight">100%</button>
+                        <button type="button" id="canvas_zoom_out"    class="btn highlight">&#xFF0B</button>
+                    </div>
+                </div> 
+
+
+
+                <div class="configuration-view border-left"  >  
+
+                    <button id="button-configuration-view-hide" type="button" class="btn btn-configuration-view">
+                        <span class="glyphicon glyphicon-chevron-right "></span>
+                    </button>
+                    <span class="configuration-view-title">Configuration View</span>
+                    <div class="config-view-content">
+                        
+                    </div>
+                </div>
+
+
+
+
+                <div id='probe_window'>
+                    <div id="probe_window_stick" class="ion-ios-eye-outline" title="Stick Window"></div>
+                    <div id="probe_hint"> </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /tab-content -->
+
+</div><!-- /container -->
+
+<div id="markdownDialog" class="modal fade" tabindex="-1">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="media-heading">Shape Documentation</h4>
+            </div>
+            <div class="modal-body">
+                <div class="html">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn  btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="figureConfigDialog">
+    Please configure me
+</div>
+<div id="figureConfigDialog2" style="display: none;">
+    Please configure me
+</div>
+
+
+<!-- Body END -->
+

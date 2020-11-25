@@ -1,0 +1,49 @@
+<!-- Body START -->
+
+<ul class="breadcrumb">
+	<li>You are here</li>
+	<li><a href="#" class="glyphicons dashboard"><i></i> Public area</a></li>
+	<li class="divider"></li>
+	Use
+	<li class="divider"></li>
+	Create Workspace
+</ul>
+
+<div class="innerLR">
+<div class="box-generic">
+<h3 class="header-h main-title">Create Project</h3>
+<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mi elit, laoreet ac turpis ac, vulputate lacinia turpis. Vestibulum eu augue massa. Curabitur a quam sed turpis pharetra finibus. In purus nulla, tristique eu pulvinar ut, lacinia ut ligula. Proin ac neque neque. Sed vitae egestas enim. </p> -->
+</div>
+	<form id="validateSubmitForm" class="form-horizontal margin-none" action="/private/workspace/create" method="post" autocomplete="off">
+		<div class="widget widget-heading-simple">
+				<div class="row-fluid">
+					<div class="span6">
+					<div class="box-generic">
+						<h5 class="input-name required-field">Name </h5>
+                                <input id="name" class="form-control" name="name" type="text" value="">
+                                 {{#if messageError}}
+								<p id="nameValidator" class="text-error" >{{messageError}}</p>
+                                 {{/if}}
+						<h5 class="input-name">Description</h5>
+								<textarea id="description" name="description" type="text"></textarea>
+								<p id="descriptionValidator" style="display: none;">Mandatory field</p>
+					</div>
+					</div>
+					
+				</div>
+				<div class="box-generic">
+				<div class="form-actions">
+					<button type="submit" class="btn btn-primary btn-large">
+						<i class="icon-save"></i> Save
+					</button>
+					<button type="button" class="btn btn-default btn-large" onclick="window.location.href='/private/workspace/list'">
+						 Cancel
+					</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<!-- Body END -->
+

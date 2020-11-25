@@ -1,0 +1,14 @@
+<model appid="b0f33640-fe2e-11e8-8700-d75202759a05">
+<Data>
+<json>{"_id":"5c125733e7179a2e270805d3","description":"A streaming data channel via socket","name":"Datos Tráfico","url":"http://www.mc30.es/images/xml/DatosTrafico.xml","protocol":"http://","type":"Xml","imageUrl":"/resources/editor/assets/images/logos/testing.png","acessKind":"PushType","rate":"500","auth":[null],"values":[{"name":"Total Vehiculos Tunel","ruta":"DatosTrafico.DatoGlobal[0].VALOR","type":"string","check":"true"},{"name":"Velocidad Media Tunel","ruta":"DatosTrafico.DatoGlobal[2].VALOR","type":"string","check":"true"},{"name":"Velocidad Media M30","ruta":"DatosTrafico.DatoGlobal[3].VALOR","type":"string","check":"true"},{"name":"Fecha actualizacion","ruta":"DatosTrafico.DatoGlobal[4].FECHA","type":"string","check":"true"}],"params":[],"model":"shape_DataSource","connections":[{"id":2}],"connectionsOut":[],"id":1,"nameId":"1","dataShape":{"type":"shape_DataSource","id":1,"x":93,"y":104,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Datos Tráfico"}}</json>
+<type>Xml</type>
+</Data>
+<Data>
+<json>{"name":"Pipeline","imageUrl":"/resources/editor/assets/images/logos/monitor2.png","type":"PipelineSimple","model":"shape_Pipeline","connections":[{"id":1}],"connectionsOut":[],"id":2,"nameId":"2","dataShape":{"type":"shape_Pipeline","id":2,"x":375,"y":257,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Pipeline"}}</json>
+<type>PipelineSimple</type>
+</Data>
+<Data>
+<json>{"name":"Table","imageUrl":"/resources/editor/assets/images/logos/online_results_table.png","type":"Results","model":"shape_Table","connections":[{"id":2}],"connectionsOut":[],"url":"charts/table.html","id":3,"nameId":"3","dataShape":{"type":"shape_Table","id":3,"x":778,"y":127,"width":100,"height":100,"alpha":1,"angle":0,"userData":{},"cssClass":"draw2d_SetFigure","bgColor":"none","color":"#1B1B1B","stroke":0,"radius":0,"dasharray":null,"name":"Table"}}</json>
+<type>Results</type>
+</Data>
+</model>

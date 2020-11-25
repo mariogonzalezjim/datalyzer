@@ -1,0 +1,80 @@
+<model appid="">
+<Data>
+<json>
+{ "description" : "The Twitter Streaming API allows to collect a public stream of tweets in real-time that you can configure with differents parameters. By technical limitations, if you have several filters, they will work as an OR.",
+  "name": "Twitter", 
+  "url" : "api.openweathermap.org/data/2.5/weather?", 
+  "protocol" : "http://", 
+  "type" : "Twitter", 
+  "imageUrl" : "/resources/editor/assets/images/logos/twitter-icon.png",
+  "acessKind" : "PushType",
+  "auth" : [  ], 
+  "values" : [ 
+                {  "name": "invalid" ,
+                   "ruta": "invalid" ,
+                   "type": "invalid" ,
+                   "check": "true"   
+                }  ,  
+                {  "name": "invalid" ,
+                   "ruta": "invalid" ,
+                   "type": "invalid" ,
+                   "check": "true"   
+                }  ,  
+                {  "name": "invalid" ,
+                   "ruta": "invalid" ,
+                   "type": "invalid" ,
+                   "check": "true"   
+                }  ,  
+                {  "name": "invalid" ,
+                   "ruta": "invalid" ,
+                   "type": "invalid" ,
+                   "check": "true"   
+                }  
+             ],
+  "params" : [ 
+             ],
+   "model": "shape_DataSource",
+   "connections" : [ 
+                 { "id": "p0" }  
+                   ],
+   "connectionsOut" : [ ],
+   "id" : "5aa955c8f36d2876ecd35500", 
+   "nameId" : "s0", 
+}
+</json>
+<type>Twitter</type>
+</Data><Data>
+<json>
+{  "name" : "Pipeline",
+   "imageUrl" : "/resources/editor/assets/images/logos/monitor2.png",
+   "type" : "PipelineSimple",
+   "model" : "shape_Pipeline",
+   "connections" : [ 
+               { "id": "5aa955c8f36d2876ecd35500" }  
+                   ],
+   "connectionsOut" : [ ],
+   "id" : "p0", 
+   "nameId" : "p0"
+}
+</json>
+<type>PipelineSimple</type>
+</Data>
+<Data>
+<json>
+{  "name" : "Table",
+   "imageUrl" : "/resources/editor/assets/images/logos/online_results_table.png",
+   "type" : "Results",
+   "model" : "shape_Table",
+   "connections" : [ 
+               { "id": "p0" }  
+                   ],
+   "connectionsOut" : [ ],
+   "id" : "t0", 
+   "url" : "charts/table.html", 
+   "nameId" : "t0"
+}
+</json>
+<type>Results</type>
+</Data></model>
+
+
